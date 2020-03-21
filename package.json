@@ -1,0 +1,30 @@
+{
+  "name": "poller-bear",
+  "version": "1.0.0",
+  "description": "A Node application that automatically updates databases with data from public APIs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrew-mcewen/poller-bear.git"
+  },
+  "author": "Andrew McEwen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrew-mcewen/poller-bear/issues"
+  },
+  "homepage": "https://github.com/andrew-mcewen/poller-bear#readme",
+  "devDependencies": {
+    "@types/node": "^13.7.1",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "mssql": "^6.2.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.24"
+  }
+}
