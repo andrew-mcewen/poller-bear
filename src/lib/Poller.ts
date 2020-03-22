@@ -5,13 +5,12 @@ export default class Poller {
     apiService: ApiService;
     pollerOptions: PollerOptions;
 
-    constructor(pollerConfig: PollerOptions) {
+    constructor(pollerConfig) {        
         this.apiService =  new ApiService();
         this.pollerOptions = pollerConfig;
     }
 
     poll() {
-        console.log(`Now polling ${this.pollerOptions.name}...`);
         this.apiService.request(this.pollerOptions.httpsRequestOptions).then((responseBody: string) => {
             console.log(responseBody);
             setTimeout(() => {

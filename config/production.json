@@ -1,0 +1,17 @@
+{
+    "ProPublicaCongressApi": {
+        "config": {
+            "name": "ProPublica Congress API",
+            "httpsRequestOptions": {
+                "hostname": "api.propublica.org",
+                "port": 443,
+                "path": "/congress/v1/116/house/members.json",
+                "method": "GET",
+                "headers": {            
+                  "X-API-Key": "VZy4HZ7YVYbONqAd0c2PoSZgZlrbfPsqi91Spnmx"
+                }
+            },
+            "frequencyInSeconds": 10
+        }
+    }
+}
