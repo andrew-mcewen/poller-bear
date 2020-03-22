@@ -6,3 +6,8 @@ dist/
 
 # dotenv config file
 .env
+
+#config files
+/config/environment/test.json
+/config/environment/development.json
+/config/environment/production.json
