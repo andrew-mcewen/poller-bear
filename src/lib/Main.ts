@@ -20,7 +20,7 @@ export default class Main {
                 path: '/congress/v1/116/house/members.json',
                 method: 'GET',
                 headers: {
-                    "X-Api-Key": config.get('apiConfigs.proPublicaCongressApi.apiKey')
+                    "X-Api-Key": process.env.PROPUBLICA_API_KEY
                 }
             },
             frequencyInSeconds: 2
