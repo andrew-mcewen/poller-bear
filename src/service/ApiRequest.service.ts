@@ -1,19 +1,15 @@
 import * as Https from 'https';
-import { ApiRequestOptions } from '../interface/ApiRequestOptions.interface';
+import { HttpsRequestOptions } from './../interface/HttpsRequestOptions.interface';
 
 export default class ApiRequestService {
-    
-    options: ApiRequestOptions;
+        
+    constructor() {}
 
-    constructor(options: ApiRequestOptions) {
-        this.options = options;
-    }
-
-    request() {
+    request(options: HttpsRequestOptions) {
         return new Promise((resolve, reject) => {
             let responseBody = '';
             
-            const req = Https.request(this.options, (res) => {
+            const req = Https.request(options, (res) => {
                 res.on('data', (chunk) => {                  
                     responseBody += chunk;
                 });

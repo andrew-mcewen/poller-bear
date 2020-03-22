@@ -4,3 +4,5 @@ node_modules/
 # typescript compiler output
 dist/
 
+# dotenv config file
+.env
