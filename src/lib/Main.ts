@@ -1,5 +1,4 @@
-import "reflect-metadata";
-import "./Env";
+import './Environment';
 import { config } from '../../config/config';
 
 import Poller from './Poller';
@@ -8,17 +7,29 @@ import { PollerOptions } from './../interface/PollerOptions.interface';
 export default class Main {
     
     constructor() { 
-        
+
     }
 
-    public startup() {
-        
-        console.log('config: ', config);
-        console.log(process.env.NODE_ENV);
+    startup() {
+        // Define poller options
+        const pollerOptions: PollerOptions = {
+            name: 'ProPublicaCongressApi',
+            httpsRequestOptions: {
+                hostname: 'api.propublica.org',
+                port: 443,
+                path: '/congress/v1/116/house/members.json',
+                method: 'GET',
+                headers: {
+                    "X-Api-Key": config.get('apiConfigs.proPublicaCongressApi.apiKey')
+                }
+            },
+            frequencyInSeconds: 2
+        };
 
-        //const poller = new Poller();         
+        // Create poller object
+        const poller = new Poller(pollerOptions);         
         
-        // Initial start
-        //poller.poll();
+        // Launch poller
+        poller.poll();        
     }
 }

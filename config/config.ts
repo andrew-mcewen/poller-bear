@@ -1,19 +1,26 @@
-import * as convict from 'convict';
+import convict from 'convict';
 
 // Define a schema
 export const config = convict({
   env: {
-    doc: 'The application environment.',
-    format: ['production', 'development', 'test'],
+    doc: 'Application Environment',
+    format: ['development', 'test','production'],
     default: 'development',
     env: 'NODE_ENV'
+  },
+  apiConfigs: {
+    proPublicaCongressApi: {
+      hostname: '',
+      apiKey: 'API_KEY'
+    }
   }
 });
  
-// Load environment dependent configuration
+// Get environment dependent configuration
 var env = config.get('env');
 
-config.loadFile('/config/' + env + '.json');
- 
+// Load environment dependent configuration
+config.loadFile('./config/environment/' + env + '.json');
+
 // Perform validation
 config.validate({allowed: 'strict'});
