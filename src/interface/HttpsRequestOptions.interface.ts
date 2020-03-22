@@ -1,8 +1,7 @@
-export interface Endpoint {
+export interface HttpsRequestOptions {
     hostname: string;
     port: number;
     path: string;
     method: string;
-    prams: any;
     headers: any;
 }

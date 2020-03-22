@@ -1,23 +1,22 @@
-import * as Https from 'https';
-import { PollerConfig } from '../interface/PollerConfig';
 import ApiService from '../service/ApiRequest.service';
+import { PollerOptions } from '../interface/PollerOptions.interface';
 
 export default class Poller {    
-    pollerConfig: PollerConfig;
     apiService: ApiService;
+    pollerOptions: PollerOptions;
 
-    constructor(pollerConfig: PollerConfig) {
-        this.pollerConfig = pollerConfig;
-        this.apiService =  new ApiService(pollerConfig.endpoint);
+    constructor(pollerConfig: PollerOptions) {
+        this.apiService =  new ApiService();
+        this.pollerOptions = pollerConfig;
     }
 
     poll() {
-        console.log(`Now polling ${this.pollerConfig.name}...`);
-        this.apiService.request().then((responseBody: string) => {
+        console.log(`Now polling ${this.pollerOptions.name}...`);
+        this.apiService.request(this.pollerOptions.httpsRequestOptions).then((responseBody: string) => {
             console.log(responseBody);
             setTimeout(() => {
                 this.poll();
-            }, this.pollerConfig.frequencyInSeconds * 1000 );
+            }, this.pollerOptions.frequencyInSeconds * 1000 );
         });        
     }
 }
