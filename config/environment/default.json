@@ -1,0 +1,9 @@
+  
+{
+    "apiConfigs" : {
+        "proPublicaCongressApi": {
+            "hostname": "api.propublica.org",
+            "apiKey": ""
+        }
+    }
+}
