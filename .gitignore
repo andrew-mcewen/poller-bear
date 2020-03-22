@@ -8,6 +8,6 @@ dist/
 .env
 
 #config files
-/config/environment/test.json
-/config/environment/development.json
-/config/environment/production.json
+config/environment/test.json
+config/environment/development.json
+config/environment/production.json
