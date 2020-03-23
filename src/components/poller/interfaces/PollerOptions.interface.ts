@@ -1,7 +1,7 @@
-import { HttpsRequestOptions } from './HttpsRequestOptions.interface';
+import { HttpsRequestOptions } from '../../../interfaces/httpsRequestOptions.interface';
 
 export interface PollerOptions {
-    name: string,
+    name: String,
     httpsRequestOptions: HttpsRequestOptions,
     frequencyInSeconds: number
 }

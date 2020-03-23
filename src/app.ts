@@ -1,4 +1,4 @@
-import Main from './lib/Main';
+import Main from './components/main/main';
 
 const main = new Main();
 

@@ -1,5 +1,5 @@
-import ApiService from '../service/ApiRequest.service';
-import { PollerOptions } from './../interface/PollerOptions.interface';
+import ApiService from '../../services/apiRequest.service';
+import { PollerOptions } from './interfaces/PollerOptions.interface';
 
 export default class Poller {    
     apiService: ApiService;

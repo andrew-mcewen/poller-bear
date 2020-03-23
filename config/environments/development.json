@@ -1,0 +1,5 @@
+{
+    "proPublicaCongressApiPollerConfig": {
+        "frequencyInSeconds": 1
+    }
+}

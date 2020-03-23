@@ -1,9 +1,9 @@
 import * as Https from 'https';
-import { HttpsRequestOptions } from './../interface/HttpsRequestOptions.interface';
+import { HttpsRequestOptions } from '../interfaces/httpsRequestOptions.interface';
 
 export default class ApiRequestService {
         
-    constructor() {}
+    constructor() { }
 
     request(options: HttpsRequestOptions) {
         return new Promise((resolve, reject) => {
