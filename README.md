@@ -1,2 +1,2 @@
 # Poller Bear
-A Node application that automatically updates databases with data from public APIs
+A Node application that regularly fetches data from public API endpoints.
