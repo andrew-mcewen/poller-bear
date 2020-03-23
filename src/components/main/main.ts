@@ -6,7 +6,7 @@ export default class Main {
     
     constructor() { }
 
-    startup() {
+    public static startup() {
         //Startup message
         console.log('Welcome to Poller!');
         console.log('Running in Environment: ', process.env.NODE_ENV);
