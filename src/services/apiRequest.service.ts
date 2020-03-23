@@ -3,19 +3,18 @@ import { HttpsRequestOptions } from '../interfaces/httpsRequestOptions.interface
 
 export default class ApiRequestService {
         
-    constructor() { }
+    constructor() {}
 
-    request(options: HttpsRequestOptions) {
+    public request(options: HttpsRequestOptions): Promise<any> {
         return new Promise((resolve, reject) => {
             let responseBody = '';
             
-            const req = Https.request(options, (res) => {
-                res.on('data', (chunk) => {                  
+            const req = Https.request(options, res => {
+                res.on('data', chunk => {                  
                     responseBody += chunk;
                 });
 
-                res.on('error', (err) => {
-                    console.log(err);
+                res.on('error', err => {
                     reject(err.message);
                 });
 
