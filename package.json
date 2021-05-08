@@ -28,6 +28,6 @@
     "dotenv": "^8.2.0",
     "mssql": "^6.2.0",
     "reflect-metadata": "^0.1.13",
-    "typeorm": "^0.2.24"
+    "typeorm": "^0.2.25"
   }
 }
